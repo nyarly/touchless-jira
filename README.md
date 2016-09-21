@@ -51,11 +51,11 @@ The _completions_ scripts need git configuration like:
 
 ```
 [jira]
-	user = thatsmyname
-	server = https://workplace.atlassian.net
-	jarfile = /deep/dark/hole/atlassian-cli-5.3.0/lib/jira-cli-5.3.0.jar
-  password = "ohmygoodnessyoustolemypassword"
-	jql = project = PROJECT and status not in (Closed, Verify)
+    user = thatsmyname
+    server = https://workplace.atlassian.net
+    jarfile = /deep/dark/hole/atlassian-cli-5.3.0/lib/jira-cli-5.3.0.jar
+    password = "ohmygoodnessyoustolemypassword"
+    jql = project = PROJECT and status not in (Closed, Verify)
 ```
 
 The recommended way to arrange these configs is:
@@ -63,25 +63,25 @@ The recommended way to arrange these configs is:
 `~/.config/git/config`
 ```
 [jira]
-	user = thatsmyname
-	server = https://workplace.atlassian.net
-  # password should be in ./secret
+    user = thatsmyname
+    server = https://workplace.atlassian.net
+    # password should be in ./secret
 [include]
-  path = ./secret
+    path = ./secret
 ```
 
 (this split is mostly about use with a dotfiles repo)
 `~/.config/git/secret`
 ```
 [jira]
-	jarfile = /deep/dark/hole/atlassian-cli-5.3.0/lib/jira-cli-5.3.0.jar
-  password = "ohmygoodnessyoustolemypassword"
+    jarfile = /deep/dark/hole/atlassian-cli-5.3.0/lib/jira-cli-5.3.0.jar
+    password = "ohmygoodnessyoustolemypassword"
 ```
 
 And because the JQL will vary by project:
 `<project>/.git/config`
 ```
 [jira]
-	jql = project = PROJECT and status not in (Closed, Verify)
+    jql = project = PROJECT and status not in (Closed, Verify)
 ```
 (test that in the Jira advanced issue search)
